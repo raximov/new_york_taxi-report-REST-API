@@ -9,7 +9,7 @@ from .models import TaxiTrip
 
 class Report(APIView):
     def get(self, request):
-        stats = TaxiTrip.objects.filter(trip_distance__gt=0).only("trip_distance").aggregate(
+        stats = TaxiTrip.objects.only("trip_distance").filter(trip_distance__gt=0).aggregate(
             short_trips=Count("trip_distance", filter=Q(trip_distance__lt=1)),
             medium_trips=Count("trip_distance", filter=Q(trip_distance__gte=1, trip_distance__lt=5)),
             long_trips=Count("trip_distance", filter=Q(trip_distance__gte=5, trip_distance__lt=10)),
