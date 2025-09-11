@@ -6,3 +6,7 @@ class TaxiTrip(models.Model):
 
     class Meta:
         db_table = "taxi_trip"
+        indexes = [
+            models.Index(fields=['trip_distance']),
+            models.Index(fields=['category']),
+        ]
