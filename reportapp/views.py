@@ -41,7 +41,7 @@ class ReportSQL(APIView):
                         COUNT(CASE WHEN trip_distance >= 10 THEN 1 END) AS very_long_trips,
                         MAX(trip_distance) AS max_distance,
                         ROUND(SUM(trip_distance)::numeric, 2) AS total_distance
-                    FROM taxi_trips
+                    FROM new_york_taxi
                     WHERE trip_distance > 0
                 )
                 SELECT COALESCE(json_agg(statdata), '[]'::json)

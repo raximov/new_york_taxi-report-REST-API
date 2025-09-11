@@ -21,7 +21,7 @@ class TaxiTrip(models.Model):
     total_amount = models.FloatField()
 
     class Meta:
-        db_table = "taxi_trips"
+        db_table = "new_york_taxi"
         indexes = [
             models.Index(fields=["trip_distance"]),
         ]
