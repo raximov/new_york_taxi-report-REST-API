@@ -78,7 +78,7 @@ WSGI_APPLICATION = 'new_york_taxi.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'newyorktaxi',
+        'NAME': 'newyork',
         'USER': 'postgres',
         'PASSWORD': 'password',
         'HOST': 'localhost',
